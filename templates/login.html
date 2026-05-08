@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="app-container">
+
+    <div class="header">
+        <h2>🔐 Login</h2>
+    </div>
+
+    <div class="content">
+
+        <!-- LOGIN -->
+        <div class="card">
+            <h3>Login</h3>
+            <input type="text" id="loginId" placeholder="User ID">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- REGISTER -->
+        <div class="card">
+            <h3>New User</h3>
+            <input type="text" id="name" placeholder="Name">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Set Password">
+            <button onclick="register()">Register</button>
+        </div>
+
+    </div>
+
+</div>
+</body>
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</html>

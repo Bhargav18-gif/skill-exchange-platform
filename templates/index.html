@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Exchange</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <canvas id="particles"></canvas>
+<div class="bg-glow"></div>
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>SkillX</h2>
+        <p id="userDisplay"></p>
+
+        <div class="nav">
+            <button onclick="loadUsers()">Users</button>
+            <button onclick="findMatches()">Matches</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <!-- PROFILE -->
+        <div class="card">
+            <h3>Profile</h3>
+            <p><b>Name:</b> <span id="userName"></span></p>
+            <p><b>Email:</b> <span id="userEmail"></span></p>
+            <p><b>Credits:</b> <span id="userCredits"></span></p>
+            <p><b>Offers:</b> <span id="userOffered"></span></p>
+            <p><b>Wants:</b> <span id="userWanted"></span></p>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="card">
+            <h3>Update Skills</h3>
+            <input id="skillsOffered" placeholder="Skills offered">
+            <input id="skillsWanted" placeholder="Skills wanted">
+            <button onclick="addSkills()">Update</button>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="card">
+            <h3>Results</h3>
+            <div id="output"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+<script>
+function logout() {
+    localStorage.removeItem("user_id");
+    window.location.href = "/";
+}
+</script>
+
+</body>
+</html>
